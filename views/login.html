@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login page</title>
+</head>
+<body>
+  
+{% if user %}
+
+<form action="/domain" method="POST">
+ <label for="host">host</label>
+ <input type="text" id="host" name="host">
+ <label for="free">free</label>
+<input type="radio" id="free" name="type" value="free">
+<label for="premium">premium</label>
+<input type="radio" id="premium" name="type" value="premium">
+<button type="submit">제출</button>
+</form>
+
+{% else %}
+<form action="/auth/login" method="POST">
+  <label for="email">이메일</label>
+  <input type="text", id="email", name="email">
+  <label for="password">비밀번호</label>
+  <input type="password" name="password" id="password">
+  <button type="submit">제출</button>
+</form>
+
+{% endif %}
+
+
+</body>
+</html>
